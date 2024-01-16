@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { page } from "$app/stores"
 	import HiddenInputs from "./HiddenInputs.svelte"
 	const NAVIGATION_PANEL_KEY = "navigationPanel"
