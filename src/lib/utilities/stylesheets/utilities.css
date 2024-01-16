@@ -1,0 +1,22 @@
+.grid-stack {
+	display: grid;
+	grid-template-areas: "stack";
+}
+
+.grid-stack > * {
+	grid-area: stack;
+}
+
+.height-100p {
+	height: 100%;
+}
+
+.glass {
+	backdrop-filter: saturate(50%) blur(13.37px);
+	background: linear-gradient(
+		118deg,
+		rgba(217, 217, 217, 0.24) 0%,
+		rgba(217, 217, 217, 0.42) 52.5%,
+		rgba(217, 217, 217, 0.24) 100%
+	);
+}
