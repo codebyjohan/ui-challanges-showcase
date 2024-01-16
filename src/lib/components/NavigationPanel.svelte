@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from "$app/stores"
-	import HiddenInputs from "./HiddenInputs.svelte"
+	import HiddenInputs from "$utilities/HiddenInputs.svelte"
 	const NAVIGATION_PANEL_KEY = "navigationPanel"
 	let open = false
 	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"

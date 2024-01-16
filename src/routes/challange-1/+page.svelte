@@ -1,5 +1,5 @@
 <script>
-	import HiddenInputs from "$components/HiddenInputs.svelte"
+	import HiddenInputs from "$utilities/HiddenInputs.svelte"
 	import OrangeManImageExample from "./OrangeManImageExample.svelte"
 </script>
 
