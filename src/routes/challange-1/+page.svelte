@@ -1,5 +1,6 @@
 <script>
 	import HiddenInputs from "$components/HiddenInputs.svelte"
+	import OrangeManImageExample from "./OrangeManImageExample.svelte"
 </script>
 
 <form>
@@ -12,3 +13,5 @@
 	<button name="state2" value="true">state 2 true</button>
 	<button name="state2" value="false">state 2 false</button>
 </form>
+
+<OrangeManImageExample />

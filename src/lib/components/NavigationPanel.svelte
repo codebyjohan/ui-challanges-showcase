@@ -7,7 +7,7 @@
 </script>
 
 <form>
-	<HiddenInputs filterKeys={NAVIGATION_PANEL_KEY} />
+	<HiddenInputs filterKeys={[NAVIGATION_PANEL_KEY]} />
 	{#if !open}
 		<button name={NAVIGATION_PANEL_KEY} value="open">Open navigation</button>
 	{:else}
