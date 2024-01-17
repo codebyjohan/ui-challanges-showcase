@@ -1,7 +1,11 @@
 <script lang="ts">
-	import "$lib/utilities/stylesheets/stylesheets.css"
+	import Background from "$components/Background/Background.svelte"
 	import NavigationPanel from "$components/NavigationPanel.svelte"
+	import "$lib/utilities/stylesheets/stylesheets.css"
 </script>
 
-<NavigationPanel />
+<!-- <div class="grid-stack"> -->
+<Background />
+<NavigationPanel></NavigationPanel>
 <slot />
+<!-- </div> -->
