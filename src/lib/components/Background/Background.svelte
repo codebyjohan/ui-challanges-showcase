@@ -1,8 +1,8 @@
 <script lang="ts">
 	// TODO: ändra till multiples av background.jpg height (h parameter)
-	import avifSrcSet from "./background.jpg?h=512;1024;2048;4096&format=avif&as=srcset&imageTools"
-	import webpSrcSet from "./background.jpg?h=512;1024;2048;4096&format=webp&as=srcset&imageTools"
-	import fallback from "./background.jpg?h=1024&url&imageTools"
+	import avifSrcSet from "./background.jpg?h=702;1404;2808;5616&format=avif&as=srcset&imageTools"
+	import webpSrcSet from "./background.jpg?h=702;1404;2808;5616&format=webp&as=srcset&imageTools"
+	import fallback from "./background.jpg?h=1404&url&imageTools"
 	import placeholder from "./background.jpg?h=128&url&format=avif&imageTools"
 </script>
 
