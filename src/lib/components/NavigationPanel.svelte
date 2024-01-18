@@ -19,14 +19,29 @@
 	</ul>
 </nav>
 
-<form>
+<form class="toggle-button-form">
 	<HiddenInputs filterKeys={[NAVIGATION_PANEL_KEY]} />
 	{#if !open}
-		<button name={NAVIGATION_PANEL_KEY} value="open">Open navigation</button>
+		<button aria-hidden="true" tabindex="-1" name={NAVIGATION_PANEL_KEY} value="open">Open navigation</button>
 	{:else}
-		<button name={NAVIGATION_PANEL_KEY} value="close">Close navigation</button>
+		<button aria-hidden="true" tabindex="-1" name={NAVIGATION_PANEL_KEY} value="close">Close navigation</button>
 	{/if}
 </form>
-{#if open}
-	panel content
-{/if}
+
+<style>
+	nav {
+		translate: -100%;
+		transition: translate 0.3s ease-in-out;
+	}
+
+	nav:focus-within,
+	nav[data-show-navigation="true"] {
+		translate: 0;
+	}
+
+	.toggle-button-form {
+		z-index: 1;
+		height: max-content;
+		width: max-content;
+	}
+</style>

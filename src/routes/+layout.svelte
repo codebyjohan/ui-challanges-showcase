@@ -4,8 +4,8 @@
 	import "$lib/utilities/stylesheets/stylesheets.css"
 </script>
 
-<!-- <div class="grid-stack"> -->
-<Background />
-<NavigationPanel></NavigationPanel>
-<slot />
-<!-- </div> -->
+<div class="grid-stack height-100p">
+	<Background />
+	<slot />
+	<NavigationPanel />
+</div>
