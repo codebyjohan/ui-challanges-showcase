@@ -32,11 +32,23 @@
 	nav {
 		translate: -100%;
 		transition: translate 0.3s ease-in-out;
+		overflow-y: auto;
+		display: flex;
+	}
+
+	nav:first-child,
+	nav:last-child {
+		margin-top: auto;
+		margin-bottom: auto;
 	}
 
 	nav:focus-within,
 	nav[data-show-navigation="true"] {
 		translate: 0;
+	}
+
+	nav ul {
+		list-style-type: none;
 	}
 
 	.toggle-button-form {
