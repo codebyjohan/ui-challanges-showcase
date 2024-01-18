@@ -11,7 +11,7 @@
 	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"
 </script>
 
-<nav data-show-navigation={open}>
+<nav class="glass" data-show-navigation={open}>
 	<ul>
 		{#each LINKS as link}
 			<li><a href={link.href}>{link.text}</a></li>
@@ -33,11 +33,15 @@
 		translate: -100%;
 		transition: translate 0.3s ease-in-out;
 		overflow-y: auto;
+		overflow-x: hidden;
 		display: flex;
+		height: 100%;
+		width: max-content;
+		padding-top: 3em;
 	}
 
-	nav:first-child,
-	nav:last-child {
+	nav ul:first-child,
+	nav ul:last-child {
 		margin-top: auto;
 		margin-bottom: auto;
 	}
@@ -48,12 +52,34 @@
 	}
 
 	nav ul {
+		padding: 1em 0.8em;
 		list-style-type: none;
+	}
+
+	nav ul li {
+		background-color: #c14545;
+		margin-bottom: 1em;
+		padding: 0 1.5em;
+		font-size: 1.6em;
+		min-width: max-content;
+	}
+
+	nav ul li:last-of-type {
+		margin-bottom: 0;
+	}
+
+	nav a {
+		text-decoration: none;
 	}
 
 	.toggle-button-form {
 		z-index: 1;
 		height: max-content;
 		width: max-content;
+	}
+
+	.toggle-button-form button {
+		padding: 1em;
+		border-bottom-right-radius: 1em;
 	}
 </style>
