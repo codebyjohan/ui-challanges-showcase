@@ -3,18 +3,19 @@
 	import HiddenInputs from "$utilities/HiddenInputs.svelte"
 	const NAVIGATION_PANEL_KEY = "navigationPanel"
 	const LINKS: { href: string; text: string }[] = [
-		{ href: "challenge-1", text: "Challenge 1" },
-		{ href: "challenge-2", text: "Challenge 2" },
-		{ href: "challenge-3", text: "Challenge 3" },
+		{ href: "/challenge-1", text: "Challenge 1" },
+		{ href: "/challenge-2", text: "Challenge 2" },
+		{ href: "/challenge-3", text: "Challenge 3" },
 	]
 	let open = false
 	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"
+	$: path = $page.url.pathname
 </script>
 
 <nav class="glass" data-show-navigation={open}>
 	<ul>
 		{#each LINKS as link}
-			<li><a href={link.href}>{link.text}</a></li>
+			<li class:active={path == link.href}><a href={link.href}>{link.text}</a></li>
 		{/each}
 	</ul>
 </nav>
@@ -57,7 +58,7 @@
 	}
 
 	nav ul li {
-		background-color: #c14545;
+		background-color: #c14545b3;
 		margin-bottom: 1em;
 		padding: 0 1.5em;
 		font-size: 1.6em;
@@ -70,6 +71,10 @@
 
 	nav a {
 		text-decoration: none;
+	}
+
+	.active {
+		background-color: #c14545;
 	}
 
 	.toggle-button-form {
