@@ -15,7 +15,7 @@
 <nav class="glass" data-show-navigation={open}>
 	<ul>
 		{#each LINKS as link}
-			<li class:active={path == link.href}><a href={link.href}>{link.text}</a></li>
+			<li class:active={path === link.href}><a href={link.href}>{link.text}</a></li>
 		{/each}
 	</ul>
 </nav>
