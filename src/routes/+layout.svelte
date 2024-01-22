@@ -6,6 +6,17 @@
 
 <div class="grid-stack height-100p">
 	<Background />
-	<slot />
-	<NavigationPanel />
+	<NavigationPanel>
+		<main>
+			<slot />
+		</main>
+	</NavigationPanel>
 </div>
+
+<style>
+	main {
+		width: max-content;
+		height: max-content;
+		margin: auto;
+	}
+</style>

@@ -12,6 +12,14 @@
 	$: path = $page.url.pathname
 </script>
 
+{#if open}
+	<form class="click-outside" aria-hidden="true">
+		<button tabindex="-1" name={NAVIGATION_PANEL_KEY} value="close"></button>
+	</form>
+{/if}
+
+<slot />
+
 <nav class="glass" data-show-navigation={open}>
 	<ul>
 		{#each LINKS as link}
@@ -86,5 +94,12 @@
 	.toggle-button-form button {
 		padding: 1em;
 		border-bottom-right-radius: 1em;
+	}
+
+	.click-outside button {
+		width: 100%;
+		height: 100%;
+		background-color: transparent;
+		cursor: auto;
 	}
 </style>
