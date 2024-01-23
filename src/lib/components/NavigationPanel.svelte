@@ -2,14 +2,9 @@
 	import { page } from "$app/stores"
 	import HiddenInputs from "$utilities/HiddenInputs.svelte"
 	const NAVIGATION_PANEL_KEY = "navigationPanel"
-	const LINKS: { href: string; text: string }[] = [
-		{ href: "/challenge-1", text: "Challenge 1" },
-		{ href: "/challenge-2", text: "Challenge 2" },
-		{ href: "/challenge-3", text: "Challenge 3" },
-	]
+	const LINKS_JOHAN: { href: string; text: string }[] = [{ href: "/johan/challenge-1", text: "Challenge 1" }]
 	let open = false
 	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"
-	$: path = $page.url.pathname
 </script>
 
 {#if open}
@@ -22,8 +17,9 @@
 
 <nav class="glass" data-show-navigation={open}>
 	<ul>
-		{#each LINKS as link}
-			<li class:active={path === link.href}><a href={link.href}>{link.text}</a></li>
+		<li class="list-item-heading">Johan</li>
+		{#each LINKS_JOHAN as link}
+			<li><a href={link.href}>{link.text}</a></li>
 		{/each}
 	</ul>
 </nav>
@@ -66,11 +62,18 @@
 	}
 
 	nav ul li {
-		background-color: #c14545b3;
+		background-color: #c14545;
 		margin-bottom: 1em;
 		padding: 0 1.5em;
 		font-size: 1.6em;
 		min-width: max-content;
+	}
+
+	.list-item-heading {
+		background-color: initial;
+		margin-bottom: initial;
+		padding: initial;
+		font-weight: 700;
 	}
 
 	nav ul li:last-of-type {
@@ -79,10 +82,6 @@
 
 	nav a {
 		text-decoration: none;
-	}
-
-	.active {
-		background-color: #c14545;
 	}
 
 	.toggle-button-form {
