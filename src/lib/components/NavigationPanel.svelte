@@ -2,7 +2,10 @@
 	import { page } from "$app/stores"
 	import HiddenInputs from "$utilities/HiddenInputs.svelte"
 	const NAVIGATION_PANEL_KEY = "navigationPanel"
-	const LINKS_JOHAN: { href: string; text: string }[] = [{ href: "/johan/challenge-1", text: "Challenge 1" }]
+	const LINKS_JOHAN: { href: string; text: string }[] = [
+		{ href: "/johan/challenge-1", text: "Challenge 1" },
+		{ href: "/johan/challenge-2", text: "Challenge 2" },
+	]
 	let open = false
 	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"
 </script>
