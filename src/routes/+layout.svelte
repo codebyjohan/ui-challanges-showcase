@@ -15,8 +15,11 @@
 
 <style>
 	main {
-		width: max-content;
-		height: max-content;
-		margin: auto;
+		overflow: auto;
+		max-height: 100vh;
+	}
+
+	.grid-stack {
+		overflow: hidden;
 	}
 </style>
