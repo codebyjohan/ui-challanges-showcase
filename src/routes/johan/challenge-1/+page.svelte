@@ -18,44 +18,38 @@
 	})
 </script>
 
-<div class="table-container">
-	<table class="league-table">
-		<caption>Premier League Table 2023/24</caption>
-		<thead>
-			<tr>
-				<th>Pos</th>
-				<th>Logo</th>
-				<th>Club</th>
-				<th>Games</th>
-				<th>GD</th>
-				<th>Points</th>
-			</tr>
-		</thead>
+<table class="league-table">
+	<caption>Premier League Table 2023/24</caption>
+	<thead>
+		<tr>
+			<th>Pos</th>
+			<th>Logo</th>
+			<th>Club</th>
+			<th>Games</th>
+			<th>GD</th>
+			<th>Points</th>
+		</tr>
+	</thead>
 
-		<tbody>
-			{#each teams as team}
-				<tr>
-					<td>{team.intRank}</td>
-					<td><img src={team.strTeamBadge} alt="Logo" /></td>
-					<td>{team.strTeam}</td>
-					<td>{team.intPlayed}</td>
-					<td>{team.intGoalDifference}</td>
-					<td>{team.intPoints}</td>
-				</tr>
-			{/each}
-		</tbody>
-	</table>
-</div>
+	<tbody>
+		{#each teams as team}
+			<tr>
+				<td>{team.intRank}</td>
+				<td><img src={team.strTeamBadge} alt="Logo" /></td>
+				<td>{team.strTeam}</td>
+				<td>{team.intPlayed}</td>
+				<td>{team.intGoalDifference}</td>
+				<td>{team.intPoints}</td>
+			</tr>
+		{/each}
+	</tbody>
+</table>
 
 <style>
-	.table-container {
-		overflow: auto;
-		max-height: 95vh;
-	}
-
 	.league-table {
 		border-collapse: collapse;
 		overflow: scroll;
+		margin: 1em auto;
 	}
 
 	.league-table caption {
