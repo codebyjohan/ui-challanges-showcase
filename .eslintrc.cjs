@@ -25,6 +25,7 @@ module.exports = {
 	root: true,
 	rules: {
 		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/no-explicit-any": "warn",
 		"no-unused-vars": "warn",
 		"sort-imports": [
 			"warn",
