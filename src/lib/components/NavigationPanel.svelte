@@ -20,10 +20,14 @@
 
 <nav class="glass" data-show-navigation={open}>
 	<ul>
-		<li class="list-item-heading">Johan</li>
-		{#each LINKS_JOHAN as link}
-			<li><a href={link.href}>{link.text}</a></li>
-		{/each}
+		<li>
+			<span>Johan</span>
+			<ul>
+				{#each LINKS_JOHAN as link}
+					<li><a href={link.href}>{link.text}</a></li>
+				{/each}
+			</ul>
+		</li>
 	</ul>
 </nav>
 
@@ -59,24 +63,23 @@
 		translate: 0;
 	}
 
-	nav ul {
+	nav ul span {
+		font-size: 1.5em;
+		font-weight: 700;
+		padding-left: 0.5em;
+	}
+
+	nav ul ul {
 		padding: 1em 0.8em;
 		list-style-type: none;
 	}
 
-	nav ul li {
+	nav ul ul li {
 		background-color: #c14545;
 		margin-bottom: 1em;
 		padding: 0 1.5em;
 		font-size: 1.6em;
 		min-width: max-content;
-	}
-
-	.list-item-heading {
-		background-color: initial;
-		margin-bottom: initial;
-		padding: initial;
-		font-weight: 700;
 	}
 
 	nav ul li:last-of-type {
