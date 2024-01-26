@@ -10,14 +10,15 @@
 	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"
 </script>
 
-{#if open}
-	<form class="click-outside" aria-hidden="true">
-		<button tabindex="-1" name={NAVIGATION_PANEL_KEY} value="close"></button>
-	</form>
-{/if}
+<main class="grid-stack">
+	{#if open}
+		<form class="click-outside" aria-hidden="true">
+			<button tabindex="-1" name={NAVIGATION_PANEL_KEY} value="close"></button>
+		</form>
+	{/if}
 
-<slot />
-
+	<slot />
+</main>
 <nav class="glass" data-show-navigation={open}>
 	<ul>
 		<li>
@@ -41,6 +42,11 @@
 </form>
 
 <style>
+	main {
+		overflow: auto;
+		max-height: 100vh;
+	}
+
 	nav {
 		translate: -100%;
 		transition: translate 0.3s ease-in-out;
@@ -99,6 +105,10 @@
 	.toggle-button-form button {
 		padding: 1em;
 		border-bottom-right-radius: 1em;
+	}
+
+	.click-outside {
+		background-color: #00000050;
 	}
 
 	.click-outside button {

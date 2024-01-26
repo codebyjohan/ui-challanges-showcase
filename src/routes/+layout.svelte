@@ -7,18 +7,11 @@
 <div class="grid-stack height-100p">
 	<Background />
 	<NavigationPanel>
-		<main>
-			<slot />
-		</main>
+		<slot />
 	</NavigationPanel>
 </div>
 
 <style>
-	main {
-		overflow: auto;
-		max-height: 100vh;
-	}
-
 	.grid-stack {
 		overflow: hidden;
 	}
