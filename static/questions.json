@@ -1,0 +1,62 @@
+[
+	{
+		"id": 1,
+		"qst": "Vilket säsong blev Arsenal den första & hittills enda klubb att gå obesegrade genom Premier League?",
+		"correctanswer": "2003/04",
+		"answers": ["2000/01", "2003/04", "2005/06", "2007/08"]
+	},
+	{
+		"id": 2,
+		"qst": "När grundades Arsenal FC?",
+		"correctanswer": "1886",
+		"answers": ["1886", "1904", "1922", "1935"]
+	},
+	{
+		"id": 3,
+		"qst": "Vem har spelat flest matcher för Arsenal?",
+		"correctanswer": "David OLeary",
+		"answers": ["Thierry Henry", "Dennis Bergkamp", "Tony Adams", "David OLeary"]
+	},
+	{
+		"id": 4,
+		"qst": "Vem har gjort flest mål för Arsenal?",
+		"correctanswer": "Thierry Henry",
+		"answers": ["Sylvain Wiltord", "Dennis Bergkamp", "Thierry Henry", "Robert Pires"]
+	},
+	{
+		"id": 5,
+		"qst": "14 december 1935 vann Arsenal mot Aston Villa med hela 7-1 efter att samtliga målen gjordes av?",
+		"correctanswer": "Ted Drake",
+		"answers": ["Ted Drake", "Jack Lambert", "Cliff Bastin", "Roonie Rooke"]
+	},
+	{
+		"id": 6,
+		"qst": "Hur många åskådare tar Emirates Stadium?",
+		"correctanswer": "60432",
+		"answers": ["55820", "57650", "60432", "64050"]
+	},
+	{
+		"id": 7,
+		"qst": "Vem av dessa svenskar har INTE spelat för Arsenal?",
+		"correctanswer": "Jonas Thern",
+		"answers": ["Jonas Thern", "Stefan Schwarz", "Anders Limpar", "Rami Shaaban"]
+	},
+	{
+		"id": 8,
+		"qst": "Vilken av följande klubbar är INTE från samma stad som Arsenal?",
+		"correctanswer": "Everton",
+		"answers": ["Tottenham", "Everton", "West Ham", "Chelsea"]
+	},
+	{
+		"id": 9,
+		"qst": "Vem är Arsenals äldsta spelare genom tiderna?",
+		"correctanswer": "Jock Rutherford",
+		"answers": ["Jock Rutherford", "Petr Cech", "Dennis Bergkamp", "Thierry Henry"]
+	},
+	{
+		"id": 10,
+		"qst": "Vem är Arsenals yngsta spelare genom tiderna?",
+		"correctanswer": "Cesc Fabregas",
+		"answers": ["Robin Van Persie", "Jack Wilshere", "Theo Walcott", "Cesc Fabregas"]
+	}
+]
