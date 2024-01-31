@@ -1,24 +1,30 @@
 <script lang="ts">
+	import { crossfade } from "svelte/transition"
 	import { page } from "$app/stores"
-	import HiddenInputs from "$utilities/HiddenInputs.svelte"
-	import { send, recieve } from "./transition"
-	const NAVIGATION_PANEL_KEY = "navigationPanel"
-	const LINKS_JOHAN: { href: string; text: string }[] = [
-		{ href: "/johan/challenge-1", text: "Challenge 1" },
-		{ href: "/johan/challenge-2", text: "Challenge 2" },
-	]
 
-	const LINKS_CALLE: { href: string; text: string }[] = [
-		{ href: "/calle/challenge-1", text: "Challenge 1" },
-		{ href: "/calle/challenge-2", text: "Challenge 2" },
-	]
-	let open = false
-	let path = $page.url.pathname
-	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"
-	$: {
-		path = $page.url.pathname
-		console.log(path)
+	import HiddenInputs from "$utilities/HiddenInputs.svelte"
+
+	const NAVIGATION_PANEL_KEY = "navigationPanel"
+
+	const [send, receive] = crossfade({})
+	const CROSS_FADE_OPTIONS = { key: "dot", duration: 500 }
+
+	type Link = { href: string; text: string }
+
+	const LINKS: { Calle: Link[]; Johan: Link[] } = {
+		Calle: [
+			{ href: "/calle/challenge-1", text: "Challenge 1" },
+			{ href: "/calle/challenge-2", text: "Challenge 2" },
+		],
+		Johan: [
+			{ href: "/johan/challenge-1", text: "Challenge 1" },
+			{ href: "/johan/challenge-2", text: "Challenge 2" },
+		],
 	}
+	const KEYS = Object.keys(LINKS) as ("Calle" | "Johan")[] // HACK: This constant only exists because of TS, we could just use Object.keys(LINKS) in the template, but currently svelte does not support TS in the template, and this should not create enough memory overhead to be a problem (I hope)
+
+	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"
+	$: path = $page.url.pathname
 </script>
 
 <main class="grid-stack">
@@ -27,50 +33,34 @@
 			<button tabindex="-1" name={NAVIGATION_PANEL_KEY} value="close"></button>
 		</form>
 	{/if}
-
 	<slot />
 </main>
+
 <nav class="glass" data-show-navigation={open}>
 	<ul>
-		<li>
-			<span>Johan</span>
-			<ul>
-				{#each LINKS_JOHAN as link}
-					<li class:active={path === link.href}>
-						{#if path === link.href}
-							<span in:send={{ key: "dot", duration: 500 }} out:recieve={{ key: "dot", duration: 500 }} class="dot"
-								>></span
-							>{/if}
-						<a href={link.href}>{link.text}</a>
-					</li>
-				{/each}
-			</ul>
-		</li>
-
-		<li>
-			<span>Calle</span>
-			<ul>
-				{#each LINKS_CALLE as link}
-					<li class:active={path === link.href}>
-						{#if path === link.href}
-							<span in:send={{ key: "dot", duration: 500 }} out:recieve={{ key: "dot", duration: 500 }} class="dot"
-								>></span
-							>{/if}
-						<a href={link.href}>{link.text}</a>
-					</li>
-				{/each}
-			</ul>
-		</li>
+		{#each KEYS as person}
+			<li>
+				<span>{person}</span>
+				<ul>
+					{#each LINKS[person] as link}
+						<li class:active={path === link.href}>
+							{#if path === link.href}
+								<span in:send={CROSS_FADE_OPTIONS} out:receive={CROSS_FADE_OPTIONS} class="dot"> > </span>
+							{/if}
+							<a href={link.href}>{link.text}</a>
+						</li>
+					{/each}
+				</ul>
+			</li>
+		{/each}
 	</ul>
 </nav>
 
 <form class="toggle-button-form">
 	<HiddenInputs filterKeys={[NAVIGATION_PANEL_KEY]} />
-	{#if !open}
-		<button aria-hidden="true" tabindex="-1" name={NAVIGATION_PANEL_KEY} value="open">Open navigation</button>
-	{:else}
-		<button aria-hidden="true" tabindex="-1" name={NAVIGATION_PANEL_KEY} value="close">Close navigation</button>
-	{/if}
+	<button aria-hidden="true" tabindex="-1" name={NAVIGATION_PANEL_KEY} value={open ? "close" : "open"}>
+		{open ? "Close" : "Open"} navigation
+	</button>
 </form>
 
 <style>
