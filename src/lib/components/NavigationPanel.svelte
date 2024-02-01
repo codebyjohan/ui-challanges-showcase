@@ -11,7 +11,7 @@
 
 	type Link = { href: string; text: string }
 
-	const LINKS: { Calle: Link[]; Johan: Link[] } = {
+	const LINKS: { Calle: Link[]; Johan: Link[]; Nassim: Link[] } = {
 		Calle: [
 			{ href: "/calle/challenge-1", text: "Challenge 1" },
 			{ href: "/calle/challenge-2", text: "Challenge 2" },
@@ -19,6 +19,10 @@
 		Johan: [
 			{ href: "/johan/challenge-1", text: "Challenge 1" },
 			{ href: "/johan/challenge-2", text: "Challenge 2" },
+		],
+		Nassim: [
+			{ href: "/nassim/challenge-1", text: "Challenge 1" },
+			{ href: "/nassim/challenge-2", text: "Challenge 2" },
 		],
 	}
 
