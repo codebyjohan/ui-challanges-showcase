@@ -21,7 +21,6 @@
 			{ href: "/johan/challenge-2", text: "Challenge 2" },
 		],
 	}
-	const KEYS = Object.keys(LINKS) as ("Calle" | "Johan")[] // HACK: This constant only exists because of TS, we could just use Object.keys(LINKS) in the template, but currently svelte does not support TS in the template, and this should not create enough memory overhead to be a problem (I hope)
 
 	$: open = $page.url.searchParams.get(NAVIGATION_PANEL_KEY) === "open"
 	$: path = $page.url.pathname
@@ -38,11 +37,11 @@
 
 <nav class="glass" data-show-navigation={open}>
 	<ul>
-		{#each KEYS as person}
+		{#each Object.entries(LINKS) as [name, links]}
 			<li>
-				<span>{person}</span>
+				<span>{name}</span>
 				<ul>
-					{#each LINKS[person] as link}
+					{#each links as link}
 						<li class:active={path === link.href}>
 							{#if path === link.href}
 								<span in:send={CROSS_FADE_OPTIONS} out:receive={CROSS_FADE_OPTIONS} class="dot"> > </span>
