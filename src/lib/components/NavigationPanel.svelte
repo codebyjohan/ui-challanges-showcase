@@ -21,6 +21,7 @@
 			{ href: "/johan/challenge-2", text: "Challenge 2" },
 			{ href: "/johan/challenge-3", text: "Challenge 3" },
 			{ href: "/johan/challenge-4", text: "Challenge 4" },
+			{ href: "/johan/challenge-5", text: "Challenge 5" },
 		],
 		Nassim: [
 			{ href: "/nassim/challenge-1", text: "Challenge 1" },
