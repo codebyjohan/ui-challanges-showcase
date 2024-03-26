@@ -2,6 +2,7 @@
 	import Calculator from "./calculator.svelte"
 </script>
 
+<a href="/grugg">Grug-version</a>
 <div><Calculator /></div>
 
 <style>
